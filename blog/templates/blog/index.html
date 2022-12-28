@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>APOD | {{data.date}}</title>
+
+        <!-- Bulma CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+            integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'blog/style.css' %}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static
+        "blog/favicon-32x32.png"%}" /> <link rel="icon" type="image/png"
+        sizes="16x16" href="{% static "blog/favicon-16x16.png"%}" /> <link
+        rel="manifest" href="{% static "blog/site.webmanifest"%}" />
+    </head>
+    <body>
+        <div class="container is-fluid">
+            <section class="section has-text-centered has-background-light">
+                <h1 class="title">Astronomy Picture of the Day 🔭</h1>
+                <h2 class="subtitle">
+                    Each day a different image or photograph of our fascinating
+                    universe is featured, along with a brief explanation written
+                    by a professional astronomer.
+                </h2>
+            </section>
+
+            <div class="box has-text-centered has-background-info-light">
+                <figure class="is-inline-block">
+                    <img
+                        src="{{data.url}}"
+                        alt="{{data.title}}"
+                        class="image"
+                    />
+                    <figcaption>
+                        <strong>{{data.title}}</strong>
+                    </figcaption>
+                </figure>
+
+                <section class="section">
+                    <p class="title">Explanation</p>
+                    <p class="subtitle">{{data.explanation}}</p>
+                </section>
+            </div>
+            <footer class="footer py-3">
+                <div class="content has-text-centered">
+                    <p>
+                        Built with ❤️ by
+                        <a
+                            href="https://github.com/Executioner769"
+                            target="_blank"
+                            >Executioner769</a
+                        ><br />
+                        Image Copyrights and Credits to {{data.copyright}}
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
