@@ -5,8 +5,6 @@ import requests
 
 # Create your views here.
 
-# Production API key
-# api_key = 'k3Mc19hGid7dpm7p5cGNbgl2Ocy15TV4q6GtuGb1'
 
 # Development API key
 api_key = 'DEMO_KEY'
